@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width: device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Truck Links Главная</title>
     <style>
       body {
@@ -47,6 +47,21 @@
         cursor: pointer;
         color: white;
         margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .expandable::before {
+        content: "❯"; /* Square icon */
+        margin-right: 10px;
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+      }
+
+      .expandable.active::before {
+        content: "✔️"; /* Checkmark icon */
+        font-size: 1.5rem;
+        transform: rotate(0deg); /* No rotation needed for checkmark */
       }
 
       .expandable-content {
