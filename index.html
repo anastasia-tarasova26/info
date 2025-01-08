@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width: device-width, initial-scale=1.0" />
+    <title>Truck Links Главная</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      #sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background: #333;
+        color: white;
+        overflow-y: auto;
+        padding: 1rem;
+      }
+
+      #sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      #sidebar ul li {
+        margin: 1rem 0;
+      }
+
+      #sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+
+      #sidebar ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .expandable {
+        cursor: pointer;
+        color: white;
+        margin-bottom: 0.5rem;
+      }
+
+      .expandable-content {
+        display: none;
+        padding-left: 1rem;
+      }
+
+      .expandable.active + .expandable-content {
+        display: block;
+      }
+
+      main {
+        margin-left: 270px;
+        padding: 1rem;
+      }
+
+      section {
+        margin-bottom: 2rem;
+      }
+
+      h1,
+      h2 {
+        color: #333;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem 0;
+        background-color: #333;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sidebar">
+      <ul>
+        <li><a href="#description">Описание</a></li>
+        <li class="expandable">Как перейти к функционалу</li>
+        <div class="expandable-content">
+          <ul>
+            <li><a href="#navigation">Способы перехода</a></li>
+          </ul>
+        </div>
+        <li class="expandable">
+          Чтобы добавить возможность создания/редактирования ссылок
+        </li>
+        <div class="expandable-content">
+          <ul>
+            <li><a href="#creating-links">Создание трекинговой ссылки</a></li>
+            <li><a href="#managing-links">Управление ссылками</a></li>
+            <li><a href="#limitations">Ограничения и уведомления</a></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+
+    <main>
+      <section id="description">
+        <h2>Описание</h2>
+        <p>
+          Truck Location Feature — это инструмент для отслеживания перемещений
+          грузовиков и трейлеров в заданный временной интервал. Для мониторинга
+          можно создать ссылку, указав временные рамки, настроить видимость
+          истории перемещений и частоту получения уведомлений на электронную
+          почту. Отслеживание осуществляется через вкладки "Trucks" и
+          "Trailers", где кнопки "Truck Location" и "Trailer Location" позволяют
+          просмотреть передвижения соответствующего транспорта.
+        </p>
+        <p>
+          Ссылки можно редактировать, копировать, проверять их журналы доступа
+          (включая IP-адреса) и статус активности. После истечения временного
+          интервала ссылки становятся неактивными, и их подробная информация
+          недоступна. Для управления ссылками предоставлены функции сортировки,
+          фильтрации и поиска по колонкам, включая фильтрацию по датам.
+        </p>
+      </section>
+
+      <section id="navigation">
+        <h2>Способы перехода</h2>
+        <ul>
+          <li>
+            Через карту Assets Map: выберите нужный Truck, затем нажмите "Create
+            Trailer Link" или "Create Truck Link".
+          </li>
+          <li>
+            Через вкладку Assets: откройте вкладку "Assets", выберите "Trucks"
+            или "Trailers", затем нажмите "Truck Location".
+          </li>
+        </ul>
+      </section>
+
+      <section id="creating-links">
+        <h2>Создание трекинговой ссылки</h2>
+        <ol>
+          <li>Нажмите кнопку "Create Link".</li>
+          <li>
+            Заполните форму с обязательными полями:
+            <ul>
+              <li>Название ссылки</li>
+              <li>Описание</li>
+              <li>Активный статус</li>
+              <li>Показ истории передвижений</li>
+              <li>Показ последнего сигнала</li>
+              <li>Период отображения данных</li>
+              <li>Email-адреса для уведомлений</li>
+            </ul>
+          </li>
+          <li>Укажите частоту отправки писем.</li>
+        </ol>
+      </section>
+
+      <section id="managing-links">
+        <h2>Управление ссылками</h2>
+        <ul>
+          <li>Открыть ссылку: откроется в новой вкладке.</li>
+          <li>Скопировать ссылку: ссылка будет скопирована в буфер обмена.</li>
+          <li>Редактирование: доступно при наличии соответствующих прав.</li>
+          <li>Просмотр логов: показывает информацию о действиях с ссылкой.</li>
+        </ul>
+      </section>
+
+      <section id="limitations">
+        <h2>Ограничения и уведомления</h2>
+        <p>
+          Страницу нельзя обновлять чаще, чем раз в 15 секунд, иначе появится
+          ошибка.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Truck Links. Все права защищены.</p>
+    </footer>
+
+    <script>
+      const expandables = document.querySelectorAll(".expandable");
+
+      expandables.forEach((expandable) => {
+        expandable.addEventListener("click", () => {
+          expandable.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
