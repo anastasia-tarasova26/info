@@ -4,101 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Truck Links Главная</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-      }
-
-      #sidebar {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 250px;
-        height: 100%;
-        background: #333;
-        color: white;
-        overflow-y: auto;
-        padding: 1rem;
-      }
-
-      #sidebar ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      #sidebar ul li {
-        margin: 1rem 0;
-      }
-
-      #sidebar ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1rem;
-      }
-
-      #sidebar ul li a:hover {
-        text-decoration: underline;
-      }
-
-      .expandable {
-        cursor: pointer;
-        color: white;
-        margin-bottom: 0.5rem;
-        display: flex;
-        align-items: center;
-      }
-
-      .expandable::before {
-        content: "❯"; /* Square icon */
-        margin-right: 10px;
-        font-size: 1.5rem;
-        transition: transform 0.3s;
-      }
-
-      .expandable.active::before {
-        content: "✔️"; /* Checkmark icon */
-        font-size: 1.5rem;
-        transform: rotate(0deg); /* No rotation needed for checkmark */
-      }
-
-      .expandable-content {
-        display: none;
-        padding-left: 1rem;
-      }
-
-      .expandable.active + .expandable-content {
-        display: block;
-      }
-
-      main {
-        margin-left: 270px;
-        padding: 1rem;
-      }
-
-      section {
-        margin-bottom: 2rem;
-      }
-
-      h1,
-      h2 {
-        color: #333;
-      }
-
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        background-color: #333;
-        color: white;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <header>
+      <a class="logo" href="./index.html" target="_blank">TrackEnsure</a>
+      <address class="contacts">
+        <ul class="contacts-list">
+          <li>
+            <a class="contacts-item" href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+          <li>
+            <a class="contacts-item" href="tel:+110001111111"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+        </ul>
+      </address>
+      <nav class="header">
+        <ul class="menu">
+          <li>
+            <a href="#">Services</a>
+            <ul class="dropdown">
+              <li><a href="#">Assets Map</a></li>
+              <li><a href="#">Fuel Card Protection</a></li>
+              <li><a href="#">Event Triggering and Notifications</a></li>
+              <li><a href="#">Reporting and Dashboards</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Products</a>
+            <ul class="dropdown">
+              <li><a href="#">PT 30</a></li>
+              <li><a href="#">Cables/Adapters</a></li>
+              <li><a href="#">Stickers</a></li>
+              <li><a href="#">Robbox</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Documents</a></li>
+          <li>
+            <a href="#">About</a>
+            <ul class="dropdown">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button class="login-button">Login</button>
+    </header>
     <div id="sidebar">
-      <ul>
-        <li><a href="#description">Описание</a></li>
+      <ul class="links">
+        <li class="expandable"><a href="#description">Описание</a></li>
         <li class="expandable">Как перейти к функционалу</li>
         <div class="expandable-content">
           <ul>
@@ -196,14 +157,6 @@
       <p>&copy; 2025 Truck Links. Все права защищены.</p>
     </footer>
 
-    <script>
-      const expandables = document.querySelectorAll(".expandable");
-
-      expandables.forEach((expandable) => {
-        expandable.addEventListener("click", () => {
-          expandable.classList.toggle("active");
-        });
-      });
-    </script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
